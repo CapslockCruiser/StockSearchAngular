@@ -1,0 +1,33 @@
+<div class="card-container" *ngIf="loaded&&!isDeleted">
+    <div class="row" style="display: block; margin: auto;">
+        <div class="gray-div">
+            <span style="font-weight: bold; font-size: 24px; margin-left: 12px;">{{item.ticker}}</span><span style="font-size: 20px; color: rgb(111,111,111); margin-left: 12px;">{{stock.name}}</span>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 12px; margin-bottom: 12px;">
+        <div class="col-md-6">
+            <div class="row card-row">Quantity: <span class="float-right">{{item.quantity}}</span></div>
+            <div class="row card-row">Avg. Cost / Share: <span class="float-right">{{costPerShare|number:'1.2-2'}}</span></div>
+            <div class="row card-row">Total Cost: <span class="float-right">{{item.totalCost|number:'1.2-2'}}</span></div>
+        </div>
+        <div class="col-md-6">
+            <div class="row card-row">Change: <span class="float-right" [ngStyle]="{'color': isNegative ? 'red' : 'green'}">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-up-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" *ngIf="!isNegative&&!isZero">
+                    <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                </svg>
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-down-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" *ngIf="isNegative&&!isZero">
+                    <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                </svg> {{change|number:'1.2-2'}}</span></div>
+            <div class="row card-row">Current Price: <span class="float-right" [ngStyle]="{'color': isNegative ? 'red' : 'green'}">{{stock.last|number:'1.2-2'}}</span></div>
+            <div class="row card-row">Market Value: <span class="float-right" [ngStyle]="{'color': isNegative ? 'red' : 'green'}">{{marketValue|number:'1.2-2'}}</span></div>
+        </div>
+    </div>
+    <div class="row" style="display: block; margin: auto;">
+        <div class="col-12 text-right" style="padding: 0;">
+            <div class="gray-div">
+                <button class="buy-button" (click)="showBuyModal()">Buy</button>
+                <button class="sell-button" (click)="showSellModal()">Sell</button>
+            </div>
+        </div>
+    </div>
+</div>

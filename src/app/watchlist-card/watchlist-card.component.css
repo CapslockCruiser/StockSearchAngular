@@ -1,0 +1,13 @@
+.card-container {
+    border: 1px solid rgb(190, 190, 190);
+    margin-top: 8px;
+    padding: 4px 12px 12px 12px;
+}
+
+.first-row {
+    font-size: 32px;
+}
+
+.second-row {
+    font-size: 16px;
+}

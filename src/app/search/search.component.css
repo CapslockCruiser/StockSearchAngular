@@ -1,0 +1,46 @@
+.heading {
+    text-align: center;
+    padding-top: 10vh;
+}
+
+.searchbar {
+    border-color: rgb(76, 74, 83);
+    border-radius: 20px;
+    padding: 4px;
+    margin-top: 20px;
+    margin-left: 22px;
+    margin-bottom: 4px;
+    width: 30vw;
+    outline: none;
+    min-width: 300px;
+    font-size: 24px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    background-color: rgb(221, 221, 221);
+    width: 100vw;
+    height: 60px;
+}
+
+.footer-text {
+    position: relative;
+    top: 25%;    
+}
+
+.input-form {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+    border: 1px solid rgb(111,79,251);
+    display: table;
+    border-radius: 500px;
+}
+
+.search-icon {
+    color: rgb(111,79,251);
+    margin-right: 18px;
+    margin-top: 12px;
+}

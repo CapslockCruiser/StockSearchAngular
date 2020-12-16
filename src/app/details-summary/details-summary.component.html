@@ -1,0 +1,46 @@
+<div class="col-12" style="margin-top: 24px;">
+    <div class="row">
+        <div class="col-sm-12 col-lg-6">
+            <div class="row d-flex justify-content-center" style="margin: 4px;">
+                <div class="col-xl-6">
+                    <div class="numbers">High Price: <span class="float-right">{{details.high}}</span></div>
+                    <div class="numbers">Low Price: <span class="float-right">{{details.low}}</span></div>
+                    <div class="numbers">Open Price: <span class="float-right">{{details.open}}</span></div>
+                    <div class="numbers">Prev. Close: <span class="float-right">{{details.prevClose}}</span></div>
+                    <div class="numbers">Volume: <span class="float-right">{{details.volume}}</span></div>
+                </div>
+                <div class="col-xl-6" *ngIf="marketOpen">
+                    <div class="numbers">Mid Price: <span class="float-right">{{details.mid}}</span></div>
+                    <div class="numbers">Ask Price: <span class="float-right">{{details.askPrice}}</span></div>
+                    <div class="numbers">Ask Size: <span class="float-right">{{details.askSize}}</span></div>
+                    <div class="numbers">Bid Price: <span class="float-right">{{details.bidPrice}}</span></div>
+                    <div class="numbers">Bid Size: <span class="float-right">{{details.bidSize}}</span></div>
+                </div>
+            </div>
+            <div class="col-12" style="margin-top: 24px;">
+                <p style="font-weight: bold; text-align: center;">Company's Description</p>
+                <div class="start-date">
+                    Start Date: {{details.startDate}}
+                </div>
+                <div class="company-description">{{details.description}}</div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+            <div class="container mx-auto">
+            <!-- <div class="row">
+                <div class="col"> -->
+                    <div class="chart" style="margin-top: 12px;">
+                        <highcharts-chart 
+                            [Highcharts]="Dailycharts" 
+                            [constructorType]="'stockChart'" 
+                            [options]="chartOptions"
+                            [(update)]="updateChart"
+                            style="width: 100%; display: block;">
+                        </highcharts-chart>
+                    <!-- </div>
+                </div> -->
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

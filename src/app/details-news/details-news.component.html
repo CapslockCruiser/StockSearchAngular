@@ -1,0 +1,28 @@
+<!-- <div class="container">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-md-6">
+                <div *ngFor="let news of newsItems|slice:0:10"><app-news-card [news]="news"></app-news-card></div>
+            </div>
+            <div class="col-md-6">
+                <div *ngFor="let news of newsItems|slice:10:20"><app-news-card [news]="news"></app-news-card></div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- https://riptutorial.com/angular2/example/32251/-ngfor-x-amount-of-items-per-row -->
+<div class="container">
+    <div class="col-12">
+        <div *ngFor="let news of newsItems; let i = index">
+            <div *ngIf="i % 2 == 0" class="row" style="display: flex; flex-wrap: wrap; margin-top: 12px;">
+                <div class="col-xl-6">
+                    <div style="height: 100%;"><app-news-card [news]="newsItems[i]"></app-news-card></div>
+                </div>
+                <div class="col-xl-6">
+                    <div style="height: 100%;"><app-news-card [news]="newsItems[i+1]"></app-news-card></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

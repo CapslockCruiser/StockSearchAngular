@@ -1,0 +1,15 @@
+<h1 class="heading">STOCK SEARCH</h1>
+<!-- <input type="text" class="stockSearchbar" placeholder="Enter stock name" (input)="saService.test($event)"> -->
+    <form class="input-form center-block">
+    <input type="text" class="searchbar" placeholder="Enter stock name" (input)="searchList($event)" [matAutocomplete]="auto" style="border: none; margin-top: 0px;">
+    <mat-icon (click)="searchStock()" class="search-icon">search</mat-icon>
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onSelected($event.option.value)">
+        <mat-option *ngIf="isLoading"><mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner></mat-option>
+        <mat-option *ngFor="let item of list" [value]="item">
+            {{item.ticker}}|{{item.name}}
+        </mat-option>
+    </mat-autocomplete>
+</form>
+<div class="footer">
+    <div class="footer-text">Powered by Tiingo. Developed by William Choi.</div>
+</div>

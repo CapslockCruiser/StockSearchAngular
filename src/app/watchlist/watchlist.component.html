@@ -1,0 +1,14 @@
+<span id="spinner" class="d-flex justify-content-center" *ngIf="!loaded"><mat-progress-spinner mode="indeterminate"></mat-progress-spinner></span>
+
+<div class="col watchlist-container mx-auto" *ngIf="loaded">
+    <h2 >My Watchlist</h2>
+    <div class="empty-alert" *ngIf="watchlistEmpty" style="padding-top: 8px; padding-bottom: 8px; background-color: rgb(254,243,203); text-align: center; color: gray;">
+        Currently you don't have any stock in your watchlist.
+    </div>
+    <div class="cards-container">
+        <div *ngFor="let item of watchlistItems"><app-watchlist-card [item]="item"></app-watchlist-card></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="footer-text">Powered by Tiingo. Developed by William Choi.</div>
+</div>

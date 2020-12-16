@@ -1,0 +1,32 @@
+<div class="card-container" *ngIf="!isHidden">
+    <!-- <span [routerLink]="'/details/'+item.ticker]"> -->
+    <span [routerLink]="'/details/'+item.ticker">
+    <div class="row float-right">
+        <div class="col">
+            <button type="button" class="close" aria-label="Close" (click)="removeFromWatchlist()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <span class="left-item first-row">{{item.ticker}}</span>
+            <span class="right-item float-right first-row" [ngStyle]="{'color': isNegative ? 'red' : 'green'}">{{item.last|number:'1.2-2'}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <span class="left-item second-row" style="max-width: 40%;">{{item.name}}</span>
+            <span class="right-item float-right second-row" [ngStyle]="{'color': isNegative ? 'red' : 'green'}">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-up-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" *ngIf="!isNegative&&!isZero">
+                    <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                </svg>
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-down-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" *ngIf="isNegative&&!isZero">
+                    <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                </svg>
+                {{item.change|number:'1.2-2'}} ({{item.changePercent|number:'1.2-2'}}%)</span>
+        </div>
+    </div>
+    </span>
+</div>

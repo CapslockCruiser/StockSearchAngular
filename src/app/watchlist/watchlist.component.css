@@ -1,0 +1,26 @@
+.watchlist-container {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 5vh;
+    max-width: 800px;
+}
+
+#spinner {
+    height: 30vh;
+    margin-top: 15vh;
+    display: flex;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    background-color: rgb(221, 221, 221);
+    width: 100vw;
+    height: 60px;
+}
+
+.footer-text {
+    position: relative;
+    top: 25%;    
+}

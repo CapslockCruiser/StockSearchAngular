@@ -1,0 +1,74 @@
+#spinner {
+    height: 30vh;
+    margin-top: 15vh;
+    display: flex;
+}
+
+.main-container {
+    margin: auto;
+    width: 90%;
+}
+
+.stock-ticker {
+    font-size: 32px;
+    padding-bottom: 0px;
+}
+
+.stock-name {
+    font-size: 24px;
+    color: rgb(109, 117, 125);
+}
+
+.exchange-name {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.change {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.change-percent {
+    font-size: 24px;
+}
+
+.buy-button {
+    background-color: rgb(69, 166, 64);
+    border: none;
+    border-radius: 4px;
+    height: 40px;
+    width: 60px;
+    color: white;
+}
+
+.market-status {
+    justify-content: center;
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.timestamp {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.arrow {
+    transform: scale(1.5);
+}
+
+/* @media (min-width: 1000px) {
+    .main-container {
+        width: 80% !important;
+    }
+} */

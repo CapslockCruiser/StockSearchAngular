@@ -1,0 +1,8 @@
+.active {
+    border-radius: 15px;
+    border: 2px solid white;
+}
+
+.navbar {
+    background-color: rgb(111, 79, 251);
+}

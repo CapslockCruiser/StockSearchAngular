@@ -1,0 +1,23 @@
+.news-card {
+    display: flex;
+    background-color: rgb(250,250,250);
+    width: 100%;
+    margin-top: 12px;
+    border: 1px solid;
+    border-color: rgb(220,220,220);
+    border-radius: 4px;
+    height: 100%;
+}
+
+.news-thumbnail {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 12px 12px 12px 12px;
+    object-fit: cover;
+}
+
+.news-text {
+    color: black;
+    padding: 0px 12px 4px 12px;
+}

@@ -1,0 +1,14 @@
+<div class="buy-modal">
+    <div>{{stock.ticker}}<span class="float-right"><button type="button" class="close" aria-label="Close" (click)="closeSelf()" style="margin-right: 4px; margin-top: 4px;">
+        <span aria-hidden="true">&times;</span>
+    </button></span></div>
+    <hr>
+    <div>Current Price: {{stock.last|number:'1.2-2'}}</div>
+    <div>Quantity: <input type="number" id="quantity" (change)="updateTotal($event.target.value)"
+        (keyup)="updateTotal($event.target.value)"></div>
+    <hr>
+    <div>
+    Total: {{total|number:'1.2-2'}}
+    <button class="buy-button float-right" (click)="buy ? buyStock() : sellStock()">{{ buy ? 'Buy' : 'Sell' }}</button>
+    </div>
+</div>
